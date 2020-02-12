@@ -151,10 +151,13 @@ function createComponent(obj) {
   para1.textContent = obj.firstParagraph;
   para2.textContent = obj.secondParagraph;
   para3.textContent = obj.thirdParagraph;
-  expandBtn.textContent = 'Expand';
+  expandBtn.textContent = 'Click to Expand';
 
   // Event listeners
-  expandBtn.addEventListener('click', () => article.classList.toggle('article-open'));
+  expandBtn.addEventListener('click', () => {
+    article.classList.contains('article-open') ? expandBtn.textContent = 'Click to Expand' : expandBtn.textContent = 'Click to Close';
+    article.classList.toggle('article-open');
+  });
 
   // Append elements
   article.append(title, date, para1, para2, para3, expandBtn);

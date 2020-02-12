@@ -66,4 +66,7 @@ body.append(createMenuComponent(menuItems));
 
 // Collapse menu of it's open and user clicks outside
 const menu = document.querySelector('.menu');
-clickDiv.addEventListener('click', () => menu.classList.toggle('menu--open'));
+clickDiv.addEventListener('click', () => {
+  menu.classList.remove('menu--open');
+  clickDiv.style.display = 'none';
+});
